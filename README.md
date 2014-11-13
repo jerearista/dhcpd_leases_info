@@ -10,6 +10,9 @@ Standalone
 
 The standalone app may be started from the commandline and will listen for HTTP connections on port 8080.
 
+    ./standalone/dhcpd_leases.py
+    http://0.0.0.0:8080/
+
 WSGI
 ----
 
@@ -25,11 +28,15 @@ To setup the WSGI version:
     install etc/httpd/conf.d/dhcp_leases.conf /etc/httpd/conf.d/
     sudo systemctl restart httpd
 
+Example
+-------
+
 Request the IP of an active lease:
 
     GET http://<dhcp_server>/dhcpd_leases/ip_by_mac/00:50:56:9b:f5:28
 
-    Returns:
-        n.n.n.n
+Returns:
+
+    192.0.2.10
 
 
